@@ -68,3 +68,23 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 });
 
+document.getElementById('bt').addEventListener('click', function() {
+    // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
+    var pdfPath = 'https://drive.google.com/file/d/14M3tHUGEIxNCbh7RIrbwog3vto7gJYZs/view?usp=drive_link';
+
+    // Create a link element
+    var link = document.createElement('a');
+    link.href = pdfPath;
+
+    // Set the download attribute with the desired filename
+    link.download = 'Resume.pdf';
+
+    // Append the link to the document body
+    document.body.appendChild(link);
+
+    // Trigger a click event on the link to start the download
+    link.click();
+
+    // Remove the link from the document body
+    document.body.removeChild(link);
+});
